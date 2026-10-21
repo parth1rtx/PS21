@@ -10,3 +10,4 @@ ml/data/processed/
 ml/artifacts/**/*.joblib
 *.log
 .pytest_cache/
+.vscode/
