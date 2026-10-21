@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+node_modules/
+dist/
+ml/data/raw/
+ml/data/processed/
+ml/artifacts/**/*.joblib
+*.log
