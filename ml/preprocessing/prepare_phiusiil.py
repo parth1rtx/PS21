@@ -4,7 +4,6 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 import pandas as pd
-
 from app.services.url_features import InvalidUrlError, normalize_url, registered_domain
 
 SRC = Path("ml/data/raw/phiusiil.csv")

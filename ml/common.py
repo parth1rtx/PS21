@@ -1,3 +1,4 @@
+import itertools
 import platform
 import sys
 import time
@@ -5,8 +6,14 @@ from importlib.metadata import version
 
 import numpy as np
 from sklearn.isotonic import IsotonicRegression
-from sklearn.metrics import (average_precision_score, brier_score_loss, confusion_matrix,
-                             f1_score, precision_score, recall_score)
+from sklearn.metrics import (
+    average_precision_score,
+    brier_score_loss,
+    confusion_matrix,
+    f1_score,
+    precision_score,
+    recall_score,
+)
 from sklearn.model_selection import GroupShuffleSplit
 
 SEED = 42
@@ -23,7 +30,7 @@ def group_split(df, group_col, seed=SEED, val=0.15, test=0.15):
 
 
 def threshold_for_fpr(y, p, max_fpr=0.01):
-    """Pick the decision threshold so about max_fpr of safe items get wrongly flagged."""
+    """Pick the threshold so about max_fpr of safe items get wrongly flagged."""
     neg = np.sort(p[y == 0])
     if len(neg) == 0:
         return 0.5
@@ -41,7 +48,7 @@ def classification_metrics(y, p, thr):
         "pr_auc": float(average_precision_score(y, p)),
         "false_positive_rate": float(fp / (fp + tn)) if (fp + tn) else None,
         "confusion_matrix": {"tn": int(tn), "fp": int(fp), "fn": int(fn), "tp": int(tp)},
-        "n": int(len(y)), "n_positive": int(np.sum(y)),
+        "n": len(y), "n_positive": int(np.sum(y)),
     }
 
 
@@ -49,7 +56,7 @@ def ece(y, p, bins=10):
     """Expected calibration error: average gap between predicted and actual phishing rate."""
     edges = np.linspace(0, 1, bins + 1)
     total, err = len(y), 0.0
-    for lo, hi in zip(edges[:-1], edges[1:]):
+    for lo, hi in itertools.pairwise(edges):
         m = (p >= lo) & ((p < hi) | (hi == 1.0))
         if m.any():
             err += m.sum() / total * abs(y[m].mean() - p[m].mean())
@@ -61,7 +68,7 @@ def env_info():
     for pkg in ["scikit-learn", "pandas", "numpy", "lightgbm", "joblib", "tldextract"]:
         try:
             out[pkg] = version(pkg)
-        except Exception:
+        except Exception:  # noqa: BLE001
             out[pkg] = "unknown"
     return out
 

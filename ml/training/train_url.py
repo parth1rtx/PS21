@@ -6,13 +6,13 @@ from pathlib import Path
 import joblib
 import numpy as np
 import pandas as pd
+from app.services.url_features import extract_features
 from lightgbm import LGBMClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from app.services.url_features import extract_features
 from ml.common import SEED, env_info, fit_and_evaluate, group_split
 
 

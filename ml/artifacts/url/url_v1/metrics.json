@@ -48,7 +48,7 @@
         "brier_raw": 0.15218818240925752,
         "brier_calibrated": 0.14062824018861897
       },
-      "latency_ms_per_sample": 0.6295700000191573
+      "latency_ms_per_sample": 0.6446629999845754
     },
     "lightgbm": {
       "val": {
@@ -90,7 +90,7 @@
         "brier_raw": 0.11395392066739059,
         "brier_calibrated": 0.11368150108228733
       },
-      "latency_ms_per_sample": 0.875046500004828
+      "latency_ms_per_sample": 0.8931495000433642
     }
   }
 }
