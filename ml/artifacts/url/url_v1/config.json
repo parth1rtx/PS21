@@ -1,0 +1,42 @@
+{
+  "version": "url_v1",
+  "model": "lightgbm",
+  "threshold": 0.8661417322834647,
+  "feature_names": [
+    "url_length",
+    "host_length",
+    "path_length",
+    "query_length",
+    "num_dots_host",
+    "num_hyphens_host",
+    "num_digits_host",
+    "digit_ratio_host",
+    "num_subdomains",
+    "host_is_ip",
+    "has_at_symbol",
+    "has_port",
+    "num_percent_encoded",
+    "has_punycode",
+    "host_entropy",
+    "path_depth",
+    "num_query_params",
+    "suspicious_token_count",
+    "is_shortener",
+    "tld_length",
+    "longest_host_label"
+  ],
+  "feature_mode": "host_only",
+  "dataset_sha256": "2d0bb7cefd1710b99916c5b9f4d48a3284f2769ef10307dadc777bf437eb6c7d",
+  "env": {
+    "python": "3.14.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "seed": 42,
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "lightgbm": "4.7.0",
+    "joblib": "1.6.0",
+    "tldextract": "5.4.0"
+  },
+  "max_fpr_target": 0.01
+}
