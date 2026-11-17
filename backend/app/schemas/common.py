@@ -22,6 +22,8 @@ class Evidence(BaseModel):
     description: str                 # what was actually observed
     severity: str = "info"           # info / low / medium / high
     observed_value: str | None = None
+    kind: str = "observation"        # "observation" = a fact, "model_inference" = model output
+    source: str | None = None        # where it came from, e.g. "url_features"
     observed_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
@@ -32,6 +34,8 @@ class ModalityResult(BaseModel):
     probability: float | None = Field(default=None, ge=0, le=1)
     probability_calibrated: bool = False
     score: float | None = Field(default=None, ge=0, le=100)
+    confidence: float | None = Field(default=None, ge=0, le=1)
+    latency_ms: float | None = None
     evidence: list[Evidence] = []
     limitations: list[str] = []
     model_version: str | None = None

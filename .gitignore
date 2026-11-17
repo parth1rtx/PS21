@@ -11,3 +11,4 @@ ml/artifacts/**/*.joblib
 *.log
 .pytest_cache/
 .vscode/
+venv/
