@@ -4,11 +4,12 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 import pandas as pd
+
 from app.services.url_features import InvalidUrlError, normalize_url, registered_domain
 
 SRC = Path("ml/data/raw/phiusiil.csv")
 OUT = Path("ml/data/processed/urls_clean.csv")
-PHISHING_IS_ZERO = True  # confirm on the dataset page, then keep or change
+PHISHING_IS_ZERO = True  # verified: label 0 = phishing (100,945 rows)
 
 df = pd.read_csv(SRC, usecols=["URL", "label"])
 rows, dropped = [], 0
