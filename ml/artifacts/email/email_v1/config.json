@@ -1,0 +1,19 @@
+{
+  "version": "email_v1",
+  "model": "tfidf",
+  "threshold": 0.6666666666666667,
+  "dataset_sha256": "7be3bc837c741a405e040fab57b12deedc4a0e85f34ac3fd308d9b065471252a",
+  "env": {
+    "python": "3.14.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "seed": 42,
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "lightgbm": "4.7.0",
+    "joblib": "1.6.0",
+    "tldextract": "5.4.0"
+  },
+  "max_fpr_target": 0.01,
+  "split": "stratified random after dedupe; independent test = held-out sources"
+}

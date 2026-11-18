@@ -1,0 +1,184 @@
+{
+  "chosen_by": "validation PR-AUC",
+  "chosen": "tfidf",
+  "split_sizes": {
+    "train": 28700,
+    "val": 6150,
+    "test": 6150
+  },
+  "models": {
+    "tfidf": {
+      "val": {
+        "threshold": 0.6666666666666667,
+        "precision": 0.9891075193253689,
+        "recall": 0.9791304347826087,
+        "f1": 0.9840936899143506,
+        "pr_auc": 0.9987965337454022,
+        "false_positive_rate": 0.009465648854961832,
+        "confusion_matrix": {
+          "tn": 3244,
+          "fp": 31,
+          "fn": 60,
+          "tp": 2815
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test": {
+        "threshold": 0.6666666666666667,
+        "precision": 0.986277269528501,
+        "recall": 0.9749565217391304,
+        "f1": 0.9805842224943152,
+        "pr_auc": 0.9970332896451193,
+        "false_positive_rate": 0.011908396946564885,
+        "confusion_matrix": {
+          "tn": 3236,
+          "fp": 39,
+          "fn": 72,
+          "tp": 2803
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test_pr_auc_raw": 0.9982998528685849,
+      "calibration": {
+        "ece_raw": 0.057330979878235364,
+        "ece_calibrated": 0.003981110410368284,
+        "brier_raw": 0.018670431331125826,
+        "brier_calibrated": 0.012765191687518872
+      },
+      "latency_ms_per_sample": 3.3504565000021103
+    },
+    "tfidf_plus_structural": {
+      "val": {
+        "threshold": 0.8089887640449439,
+        "precision": 0.9938472674629026,
+        "recall": 0.9551304347826087,
+        "f1": 0.9741042923022348,
+        "pr_auc": 0.9985683270203785,
+        "false_positive_rate": 0.005190839694656489,
+        "confusion_matrix": {
+          "tn": 3258,
+          "fp": 17,
+          "fn": 129,
+          "tp": 2746
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test": {
+        "threshold": 0.8089887640449439,
+        "precision": 0.9916967509025271,
+        "recall": 0.9554782608695652,
+        "f1": 0.9732506643046944,
+        "pr_auc": 0.997040515539936,
+        "false_positive_rate": 0.007022900763358778,
+        "confusion_matrix": {
+          "tn": 3252,
+          "fp": 23,
+          "fn": 128,
+          "tp": 2747
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test_pr_auc_raw": 0.99801854665625,
+      "calibration": {
+        "ece_raw": 0.054866615299363514,
+        "ece_calibrated": 0.00313398658304955,
+        "brier_raw": 0.018132409231405886,
+        "brier_calibrated": 0.01255374817349863
+      },
+      "latency_ms_per_sample": 8.663067000006777
+    }
+  },
+  "independent": {
+    "CEAS_08": {
+      "threshold": 0.6666666666666667,
+      "precision": 0.9426437072676627,
+      "recall": 0.88195225966949,
+      "f1": 0.9112885951222498,
+      "pr_auc": 0.948203508046279,
+      "false_positive_rate": 0.052601021830004646,
+      "confusion_matrix": {
+        "tn": 16318,
+        "fp": 906,
+        "fn": 1993,
+        "tp": 14890
+      },
+      "n": 34107,
+      "n_positive": 16883
+    },
+    "Nazario": {
+      "n": 1530,
+      "only_class": 1,
+      "fraction_correct": 0.7986928104575164
+    }
+  },
+  "top_terms": {
+    "legitimate": [
+      "enron",
+      "urltoken",
+      "thanks",
+      "the",
+      "vince",
+      "2001",
+      "2002",
+      "attached",
+      "louise",
+      "wrote",
+      "2000",
+      "on",
+      "713",
+      "language",
+      "date",
+      "university",
+      "enron com",
+      "gas",
+      "to",
+      "01",
+      "houston",
+      "that",
+      "edu",
+      "meeting",
+      "linguistics",
+      "questions",
+      "energy",
+      "doc",
+      "pm",
+      "file"
+    ],
+    "phishing_or_spam": [
+      "meds",
+      "investment",
+      "now",
+      "free",
+      "site",
+      "com",
+      "info",
+      "bank",
+      "account",
+      "quality",
+      "email",
+      "viagra",
+      "click",
+      "click here",
+      "best",
+      "hello",
+      "software",
+      "mobile",
+      "life",
+      "online",
+      "remove",
+      "2005",
+      "no",
+      "our",
+      "money",
+      "2004",
+      "here",
+      "you",
+      "http",
+      "your"
+    ]
+  }
+}
