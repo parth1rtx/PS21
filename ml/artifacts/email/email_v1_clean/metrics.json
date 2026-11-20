@@ -1,0 +1,184 @@
+{
+  "chosen_by": "validation PR-AUC",
+  "chosen": "tfidf",
+  "split_sizes": {
+    "train": 28700,
+    "val": 6150,
+    "test": 6150
+  },
+  "models": {
+    "tfidf": {
+      "val": {
+        "threshold": 0.7173913043478262,
+        "precision": 0.9903846153846154,
+        "recall": 0.967304347826087,
+        "f1": 0.9787084286468415,
+        "pr_auc": 0.9984145194608477,
+        "false_positive_rate": 0.008244274809160306,
+        "confusion_matrix": {
+          "tn": 3248,
+          "fp": 27,
+          "fn": 94,
+          "tp": 2781
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test": {
+        "threshold": 0.7173913043478262,
+        "precision": 0.988656504785537,
+        "recall": 0.9700869565217392,
+        "f1": 0.9792837078651685,
+        "pr_auc": 0.9960887763822149,
+        "false_positive_rate": 0.009770992366412214,
+        "confusion_matrix": {
+          "tn": 3243,
+          "fp": 32,
+          "fn": 86,
+          "tp": 2789
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test_pr_auc_raw": 0.997852797573384,
+      "calibration": {
+        "ece_raw": 0.06127782628019965,
+        "ece_calibrated": 0.005253515397144864,
+        "brier_raw": 0.020401078123966934,
+        "brier_calibrated": 0.013876792786461622
+      },
+      "latency_ms_per_sample": 1.0911730000225361
+    },
+    "tfidf_plus_structural": {
+      "val": {
+        "threshold": 0.7820512820512822,
+        "precision": 0.9924215084806929,
+        "recall": 0.9565217391304348,
+        "f1": 0.9741409847679773,
+        "pr_auc": 0.9983090950598769,
+        "false_positive_rate": 0.006412213740458015,
+        "confusion_matrix": {
+          "tn": 3254,
+          "fp": 21,
+          "fn": 125,
+          "tp": 2750
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test": {
+        "threshold": 0.7820512820512822,
+        "precision": 0.9913575801224342,
+        "recall": 0.9575652173913044,
+        "f1": 0.9741684359518754,
+        "pr_auc": 0.9963444666373844,
+        "false_positive_rate": 0.00732824427480916,
+        "confusion_matrix": {
+          "tn": 3251,
+          "fp": 24,
+          "fn": 122,
+          "tp": 2753
+        },
+        "n": 6150,
+        "n_positive": 2875
+      },
+      "test_pr_auc_raw": 0.9975420228483484,
+      "calibration": {
+        "ece_raw": 0.06063602108121549,
+        "ece_calibrated": 0.004689713204342812,
+        "brier_raw": 0.02023938520337219,
+        "brier_calibrated": 0.013724742621657461
+      },
+      "latency_ms_per_sample": 2.0310734999657143
+    }
+  },
+  "independent": {
+    "CEAS_08": {
+      "threshold": 0.7173913043478262,
+      "precision": 0.9508999470619375,
+      "recall": 0.8511520464372445,
+      "f1": 0.8982653539615565,
+      "pr_auc": 0.9491307148526681,
+      "false_positive_rate": 0.04307942405945193,
+      "confusion_matrix": {
+        "tn": 16482,
+        "fp": 742,
+        "fn": 2513,
+        "tp": 14370
+      },
+      "n": 34107,
+      "n_positive": 16883
+    },
+    "Nazario": {
+      "n": 1530,
+      "only_class": 1,
+      "fraction_correct": 0.7509803921568627
+    }
+  },
+  "top_terms": {
+    "legitimate": [
+      "the",
+      "thanks",
+      "urltoken",
+      "attached",
+      "wrote",
+      "on",
+      "date",
+      "to",
+      "hpl",
+      "pm",
+      "meeting",
+      "kaminski",
+      "url urltoken",
+      "questions",
+      "for",
+      "doc",
+      "urltoken date",
+      "url",
+      "that",
+      "would",
+      "ect",
+      "john",
+      "853",
+      "conference",
+      "at",
+      "research",
+      "employees",
+      "me know",
+      "file",
+      "cc"
+    ],
+    "phishing_or_spam": [
+      "save",
+      "investment",
+      "low",
+      "man",
+      "meds",
+      "now",
+      "email",
+      "site",
+      "best",
+      "click",
+      "bank",
+      "info",
+      "free",
+      "quality",
+      "viagra",
+      "account",
+      "click here",
+      "mobile",
+      "hello",
+      "online",
+      "life",
+      "software",
+      "remove",
+      "our",
+      "no",
+      "money",
+      "here",
+      "you",
+      "http",
+      "your"
+    ]
+  }
+}

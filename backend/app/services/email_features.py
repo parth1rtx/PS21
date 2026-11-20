@@ -5,6 +5,10 @@ URL_RE = re.compile(r"https?://\S+|www\.\S+", re.IGNORECASE)
 ADDR_RE = re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b")
 NONWORD = re.compile(r"[^a-z0-9 ]+")
 
+ARTIFACT_WORDS = {"enron", "vince", "louise", "houston", "713", "gas", "energy",
+                  "linguistics", "university", "edu", "language",
+                  "2000", "2001", "2002", "2004", "2005", "01"}
+
 PHRASES = {
     "urgency": ["urgent", "immediately", "within 24 hours", "act now", "final notice",
                 "expires", "suspended", "as soon as possible", "limited time"],
@@ -44,4 +48,5 @@ def structural_features(subject: str, body: str) -> dict[str, float]:
 
 
 def model_text(subject: str, body: str) -> str:
-    return normalize(subject + " " + body)
+    words = normalize(subject + " " + body).split()
+    return " ".join(w for w in words if w not in ARTIFACT_WORDS)
