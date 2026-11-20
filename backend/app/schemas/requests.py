@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class UrlRequest(BaseModel):
@@ -11,3 +11,14 @@ class UrlRequest(BaseModel):
         if not v:
             raise ValueError("URL is empty")
         return v
+
+
+class EmailRequest(BaseModel):
+    subject: str = Field(default="", max_length=998)
+    body: str = Field(default="", max_length=200_000)
+
+    @model_validator(mode="after")
+    def need_some_text(self):
+        if not self.subject.strip() and not self.body.strip():
+            raise ValueError("Provide a subject or a body")
+        return self
