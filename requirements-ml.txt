@@ -5,3 +5,6 @@ lightgbm>=4.3
 joblib>=1.4
 tldextract>=5.1
 beautifulsoup4>=4.12
+pytesseract>=0.3.10
+pillow>=10.1
+opencv-python-headless>=4.9
